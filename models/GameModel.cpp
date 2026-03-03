@@ -10,17 +10,17 @@ GameModel::~GameModel() {
 }
 
 CardModel* GameModel::findCardById(int cardId) {
-    // ÔÚ×ÀÃæÅÆÖĞ²éÕÒ
+    // åœ¨æ¡Œé¢ç‰Œä¸­æŸ¥æ‰¾
     for (auto card : playfieldCards) {
         if (card->getId() == cardId) return card;
     }
 
-    // ÔÚÊÖÅÆÖĞ²éÕÒ
+    // åœ¨æ‰‹ç‰Œä¸­æŸ¥æ‰¾
     for (auto card : handCards) {
         if (card->getId() == cardId) return card;
     }
 
-    // ÔÚ±¸ÓÃÅÆ¶ÑÖĞ²éÕÒ
+    // åœ¨å¤‡ç”¨ç‰Œå †ä¸­æŸ¥æ‰¾
     for (auto card : stackCards) {
         if (card->getId() == cardId) return card;
     }
@@ -62,7 +62,7 @@ void GameModel::notifyDataChanged() {
 bool GameModel::hasMovableCards() const {
     if (!topHandCard) return false;
 
-    // ¼ì²éÊÇ·ñÓĞ¿ÉÒÆ¶¯µÄ×ÀÃæÅÆ
+    // æ£€æŸ¥æ˜¯å¦æœ‰å¯ç§»åŠ¨çš„æ¡Œé¢ç‰Œ
     for (auto card : playfieldCards) {
         if (card->canMatchWith(topHandCard)) {
             return true;
@@ -73,12 +73,12 @@ bool GameModel::hasMovableCards() const {
 }
 
 bool GameModel::isGameOver() const {
-    // ÓÎÏ·½áÊøÌõ¼ş£ºÃ»ÓĞ¿ÉÒÆ¶¯µÄÅÆÇÒ±¸ÓÃÅÆ¶ÑÎª¿Õ
+    // æ¸¸æˆç»“æŸæ¡ä»¶ï¼šæ²¡æœ‰å¯ç§»åŠ¨çš„ç‰Œä¸”å¤‡ç”¨ç‰Œå †ä¸ºç©º
     return !hasMovableCards() && stackCards.empty();
 }
 
 void GameModel::clear() {
-    // ÇåÀíÄÚ´æ
+    // æ¸…ç†å†…å­˜
     for (auto card : playfieldCards) delete card;
     for (auto card : handCards) delete card;
     for (auto card : stackCards) delete card;
