@@ -6,7 +6,7 @@ USING_NS_CC;
 GameModel* GameModelFromLevelGenerator::generateGameModel(const LevelConfig& config) {
     GameModel* gameModel = new GameModel();
 
-    // Éú³É×ÀÃæÅÆ
+    // ç”Ÿæˆæ¡Œé¢ç‰Œ
     for (const auto& cardConfig : config.playfieldCards) {
         CardModel* card = new CardModel(cardConfig.cardFace,
             cardConfig.cardSuit,
@@ -15,17 +15,17 @@ GameModel* GameModelFromLevelGenerator::generateGameModel(const LevelConfig& con
         gameModel->playfieldCards.push_back(card);
     }
 
-    // Éú³É±¸ÓÃÅÆ¶Ñ
+    // ç”Ÿæˆå¤‡ç”¨ç‰Œå †
     for (const auto& cardConfig : config.stackCards) {
         CardModel* card = new CardModel(cardConfig.cardFace,
             cardConfig.cardSuit,
-            Vec2(540, 290)); // ¶ÑÅÆÇøÖÐÐÄ
+            Vec2(540, 290)); // å †ç‰ŒåŒºä¸­å¿ƒ
         card->isInHand = true;
         card->isTopCard = false;
         gameModel->stackCards.push_back(card);
     }
 
-    // ÉèÖÃ¶¥²¿ÊÖÅÆ£¨´Ó±¸ÓÃÅÆ¶ÑÈ¡µÚÒ»ÕÅ£©
+    // è®¾ç½®é¡¶éƒ¨æ‰‹ç‰Œï¼ˆä»Žå¤‡ç”¨ç‰Œå †å–ç¬¬ä¸€å¼ ï¼‰
     if (!gameModel->stackCards.empty()) {
         gameModel->topHandCard = gameModel->stackCards[0];
         gameModel->topHandCard->isTopCard = true;
