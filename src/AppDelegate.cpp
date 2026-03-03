@@ -28,7 +28,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
         director->setOpenGLView(glview);
     }
 
-    director->setDisplayStats(true); // 显示调试信息
+    director->setDisplayStats(true); // 脧脭脢戮碌梅脢脭脨脜脧垄
     director->setAnimationInterval(1.0f / 60);
 
     auto scene = GameScene::createScene();
@@ -43,4 +43,5 @@ void AppDelegate::applicationDidEnterBackground() {
 
 void AppDelegate::applicationWillEnterForeground() {
     Director::getInstance()->startAnimation();
+
 }
