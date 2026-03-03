@@ -15,8 +15,8 @@ struct CardConfig {
 };
 
 struct LevelConfig {
-    std::vector<CardConfig> playfieldCards;  // ×ÀÃæÅÆ
-    std::vector<CardConfig> stackCards;      // ±¸ÓÃÅÆ¶Ñ
+    std::vector<CardConfig> playfieldCards;  // Ã—Ã€ÃƒÃ¦Ã…Ã†
+    std::vector<CardConfig> stackCards;      // Â±Â¸Ã“ÃƒÃ…Ã†Â¶Ã‘
 
     LevelConfig() = default;
 };
