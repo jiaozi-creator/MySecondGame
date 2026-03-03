@@ -11,11 +11,11 @@
 class GameView : public cocos2d::Node {
 private:
     const GameModel* _gameModel;
-    cocos2d::Node* _playFieldView;      // Ö÷ÅÆÇø
-    cocos2d::Node* _stackView;          // ¶ÑÅÆÇø
-    cocos2d::ui::Button* _undoButton;   // »ØÍË°´Å¥
+    cocos2d::Node* _playFieldView;      // ä¸»ç‰ŒåŒº
+    cocos2d::Node* _stackView;          // å †ç‰ŒåŒº
+    cocos2d::ui::Button* _undoButton;   // å›é€€æŒ‰é’®
 
-    std::map<int, CardView*> _cardViews; // ¿¨ÅÆIDµ½ÊÓÍ¼µÄÓ³Éä
+    std::map<int, CardView*> _cardViews; // å¡ç‰ŒIDåˆ°è§†å›¾çš„æ˜ å°„
 
     std::function<void(int)> _cardClickCallback;
     std::function<void()> _undoCallback;
@@ -30,22 +30,22 @@ public:
 
     void initWithModel(const GameModel* model);
 
-    // ÉèÖÃ»Øµ÷
+    // è®¾ç½®å›è°ƒ
     void setCardClickCallback(const std::function<void(int)>& callback);
     void setUndoCallback(const std::function<void()>& callback);
 
-    // ²¥·Å¶¯»­
+    // æ’­æ”¾åŠ¨ç”»
     void playCardMoveAnimation(int cardId, const cocos2d::Vec2& targetPos);
     void playMatchAnimation(int cardId1, int cardId2);
 
-    // ¸üĞÂÊÓÍ¼
+    // æ›´æ–°è§†å›¾
     void updateView();
 
-    // »ñÈ¡ÊÓÍ¼½Úµã
+    // è·å–è§†å›¾èŠ‚ç‚¹
     cocos2d::Node* getPlayFieldView() const { return _playFieldView; }
     cocos2d::Node* getStackView() const { return _stackView; }
 
-    // Ìí¼Ó¿¨ÅÆÊÓÍ¼
+    // æ·»åŠ å¡ç‰Œè§†å›¾
     void addCardView(CardView* cardView);
 };
 
