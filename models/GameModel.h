@@ -11,31 +11,31 @@ private:
     std::vector<std::function<void()>> dataChangedListeners;
 
 public:
-    std::vector<CardModel*> playfieldCards;  // ×ÀÃæÅÆ
-    std::vector<CardModel*> stackCards;      // ±¸ÓÃÅÆ¶Ñ
-    std::vector<CardModel*> handCards;       // ÊÖÅÆÇøËùÓĞÅÆ
-    CardModel* topHandCard;                  // ÊÖÅÆÇø¶¥²¿ÅÆ
+    std::vector<CardModel*> playfieldCards;  // æ¡Œé¢ç‰Œ
+    std::vector<CardModel*> stackCards;      // å¤‡ç”¨ç‰Œå †
+    std::vector<CardModel*> handCards;       // æ‰‹ç‰ŒåŒºæ‰€æœ‰ç‰Œ
+    CardModel* topHandCard;                  // æ‰‹ç‰ŒåŒºé¡¶éƒ¨ç‰Œ
 
-    std::vector<UndoModel> undoHistory;      // »ØÍËÀúÊ·
+    std::vector<UndoModel> undoHistory;      // å›é€€å†å²
 
     GameModel();
     ~GameModel();
 
-    // ²éÕÒ¿¨ÅÆ
+    // æŸ¥æ‰¾å¡ç‰Œ
     CardModel* findCardById(int cardId);
     CardModel* findCardInPlayfield(int cardId);
     CardModel* findCardInHand(int cardId);
     CardModel* findCardInStack(int cardId);
 
-    // Êı¾İ¼àÌı
+    // æ•°æ®ç›‘å¬
     void addDataChangedListener(const std::function<void()>& listener);
     void notifyDataChanged();
 
-    // ÓÎÏ·×´Ì¬¼ì²é
+    // æ¸¸æˆçŠ¶æ€æ£€æŸ¥
     bool hasMovableCards() const;
     bool isGameOver() const;
 
-    // ÇåÀí
+    // æ¸…ç†
     void clear();
 };
 
