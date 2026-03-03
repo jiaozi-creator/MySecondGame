@@ -11,7 +11,7 @@ UndoManager::~UndoManager() {
 void UndoManager::recordUndo(const UndoModel& undoRecord) {
     undoStack.push_back(undoRecord);
 
-    // 限制历史记录数量
+    // 脧脼脰脝脌煤脢路录脟脗录脢媒脕驴
     if (undoStack.size() > MAX_UNDO_HISTORY) {
         undoStack.erase(undoStack.begin());
     }
