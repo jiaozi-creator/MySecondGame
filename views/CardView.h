@@ -16,7 +16,7 @@ private:
     void createFaceUpCard();
     void updateCardDisplay();
 
-    // ¸¨Öú·½·¨£º»ñÈ¡×ÊÔ´Â·¾¶
+    // è¾…åŠ©æ–¹æ³•ï¼šè·å–èµ„æºè·¯å¾„
     std::string getBigNumberPath(const std::string& faceName, const std::string& color);
     std::string getSmallNumberPath(const std::string& faceName, const std::string& color);
     std::string getSuitPath(const std::string& suitName);
@@ -30,13 +30,13 @@ public:
 
     void setClickCallback(const std::function<void()>& callback);
 
-    // ²¥·ÅÒÆ¶¯¶¯»­
+    // æ’­æ”¾ç§»åŠ¨åŠ¨ç”»
     void playMoveAnimation(const cocos2d::Vec2& targetPos, float duration = 0.3f);
 
-    // ¸üĞÂÏÔÊ¾
+    // æ›´æ–°æ˜¾ç¤º
     void updateView();
 
-    // »ñÈ¡¿¨ÅÆID
+    // è·å–å¡ç‰ŒID
     int getCardId() const;
 };
 
